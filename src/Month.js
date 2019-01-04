@@ -1,40 +1,55 @@
 import React, { Component } from 'react'
-import { Icon, Table } from 'semantic-ui-react'
+import { Grid, Image } from 'semantic-ui-react'
 
 class Month extends Component {
-  rows = () => (
-    <Table.Row>
-      <Table.Cell textAlign='center'>X</Table.Cell>
-      <Table.Cell textAlign='center'>X</Table.Cell>
-      <Table.Cell textAlign='center'>X</Table.Cell>
-      <Table.Cell textAlign='center'>X</Table.Cell>
-      <Table.Cell textAlign='center'>X</Table.Cell>
-      <Table.Cell textAlign='center'>X</Table.Cell>
-      <Table.Cell textAlign='center'>X</Table.Cell>
-    </Table.Row>
-  )
+  daysOfWeek = () => {
+    const days = [
+                  'Sunday', 'Monday', 'Tuesday', 'Wednesday',
+                  'Thursday', 'Friday', 'Saturday'
+                 ]
+    return <Grid.Row columns={7} textAlign='center'>
+            {days.map(day => {
+              return <Grid.Column>
+                {day}
+              </Grid.Column>
+            })}
+          </Grid.Row>
+  }
+
+  rows = () => {
+    const style = {
+            height: '80px',
+            'vertical-align': 'middle',
+            'text-align': 'center',
+            'line-height': '80px'
+          }
+    const textArr = ['Text', 'Text', 'Text', 'Text', 'Text', 'Text', 'Text']
+
+    return <Grid.Row columns={7} textAlign='center'>
+            {textArr.map(text => {
+              return <Grid.Column>
+                <div style={style}>{text}</div>
+              </Grid.Column>
+            })}
+          </Grid.Row>
+  }
+
   render(){
 
-    return   <div className="calendar-table">
-      <Table celled striped>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell colSpan='7' textAlign='center'>January</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
+    return <div className="calendar-table">
+            <Grid celled>
+              <Grid.Row columns={1} textAlign='center'>
+                <Grid.Column>
+                  <h2>JANUARY</h2>
+                </Grid.Column>
+              </Grid.Row >
 
-        <Table.Body>
-          {this.rows()}
-          {this.rows()}
-          {this.rows()}
-          {this.rows()}
-          {this.rows()}
-        </Table.Body>
-      </Table>
-    </div>
+                {this.daysOfWeek()}
+                {this.rows()}
+
+            </Grid>
+          </div>
   }
 }
-
-
 
 export default Month
