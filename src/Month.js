@@ -2,9 +2,21 @@ import React, { Component } from 'react'
 import { Icon, Table } from 'semantic-ui-react'
 
 class Month extends Component {
+  rows = () => (
+    <Table.Row>
+      <Table.Cell textAlign='center'>X</Table.Cell>
+      <Table.Cell textAlign='center'>X</Table.Cell>
+      <Table.Cell textAlign='center'>X</Table.Cell>
+      <Table.Cell textAlign='center'>X</Table.Cell>
+      <Table.Cell textAlign='center'>X</Table.Cell>
+      <Table.Cell textAlign='center'>X</Table.Cell>
+      <Table.Cell textAlign='center'>X</Table.Cell>
+    </Table.Row>
+  )
   render(){
+
     return   <div className="calendar-table">
-    <Table celled striped>
+      <Table celled striped>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell colSpan='7' textAlign='center'>January</Table.HeaderCell>
@@ -12,51 +24,11 @@ class Month extends Component {
         </Table.Header>
 
         <Table.Body>
-          <Table.Row>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-            <Table.Cell textAlign='center'>X</Table.Cell>
-          </Table.Row>
+          {this.rows()}
+          {this.rows()}
+          {this.rows()}
+          {this.rows()}
+          {this.rows()}
         </Table.Body>
       </Table>
     </div>
