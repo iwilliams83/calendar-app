@@ -50,13 +50,13 @@ class Month extends Component {
         }
       }
     }
-    
+
     return <>
             {dates.map((dateArr, idx) => {
                 return <Grid.Row columns={7} textAlign='center' key={idx}>
                   {dateArr.map((date, idx) => {
                     return <Grid.Column key={idx}>
-                          <div style={style}>{date}</div>
+                        {date === 0 ? <div></div> : <div style={style}>{date}</div>}
                       </Grid.Column>
                   })}
                 </Grid.Row>
