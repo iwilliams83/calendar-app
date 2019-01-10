@@ -26,17 +26,31 @@ class Month extends Component {
           }
     const dates = []
 
-    for(let i = 1; i <= days; i++){
-      dates.push(i)
+    const weeks = Math.ceil(days/7)
+    let j = 1
+
+    while(j <= days){
+      for(let i = 0; i < weeks; i++){
+        dates.push([])
+        if(i === 0){
+
+        }
+        for(let k = 0; k < 7; k++){
+          if(j <= days) { dates[i].push(j) }
+          j++
+        }
+      }
     }
 
     console.log('dates: ', dates)
 
     return <Grid.Row columns={7} textAlign='center'>
-            {dates.map((date, idx) => {
-              return <Grid.Column key={idx}>
-                <div style={style}>{date}</div>
-              </Grid.Column>
+            {dates.map(dateArr => {
+              return dateArr.map((date, idx) => {
+                return <Grid.Column key={idx}>
+                      <div style={style}>{date}</div>
+                  </Grid.Column>
+              })
             })}
           </Grid.Row>
   }
