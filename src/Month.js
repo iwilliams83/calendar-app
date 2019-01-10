@@ -8,8 +8,8 @@ class Month extends Component {
                   'Thursday', 'Friday', 'Saturday'
                  ]
     return <Grid.Row columns={7} textAlign='center'>
-            {days.map(day => {
-              return <Grid.Column>
+            {days.map((day, idx) => {
+              return <Grid.Column key={idx}>
                 {day}
               </Grid.Column>
             })}
@@ -17,25 +17,32 @@ class Month extends Component {
   }
 
   rows = () => {
+    const { days } = this.props.month
     const style = {
             height: '80px',
-            'vertical-align': 'middle',
-            'text-align': 'center',
-            'line-height': '80px'
+            'verticalAlign': 'middle',
+            'textAlign': 'center',
+            'lineHeight': '80px'
           }
-    const textArr = ['Text', 'Text', 'Text', 'Text', 'Text', 'Text', 'Text']
+    const dates = []
+
+    for(let i = 1; i <= days; i++){
+      dates.push(i)
+    }
+
+    console.log('dates: ', dates)
 
     return <Grid.Row columns={7} textAlign='center'>
-            {textArr.map(text => {
-              return <Grid.Column>
-                <div style={style}>{text}</div>
+            {dates.map((date, idx) => {
+              return <Grid.Column key={idx}>
+                <div style={style}>{date}</div>
               </Grid.Column>
             })}
           </Grid.Row>
   }
 
   render(){
-
+    console.log('month:', this.props.month)
     return <div className="calendar-table">
             <Grid celled>
               <Grid.Row columns={1} textAlign='center'>

@@ -7,10 +7,10 @@ import Month from './Month'
 
 class App extends Component {
   render() {
-    
+
     return (
       <div >
-        <Month />
+        <Month month={months[0]}/>
       </div>
     );
   }
