@@ -18,6 +18,7 @@ class Month extends Component {
 
   rows = () => {
     const { days } = this.props.month
+    const start = 3
     const style = {
             height: '80px',
             'verticalAlign': 'middle',
@@ -33,11 +34,20 @@ class Month extends Component {
       for(let i = 0; i < weeks; i++){
         dates.push([])
         if(i === 0){
-
+          for(let s = 0; s < start; s++){
+            console.log('dates: ', dates)
+            dates[i].push(0)
+          }
+          for(let r = start; r < 7; r++){
+            dates[i].push(j)
+            j++
+          }
         }
-        for(let k = 0; k < 7; k++){
-          if(j <= days) { dates[i].push(j) }
-          j++
+        else{
+          for(let k = 0; k < 7; k++){
+            if(j <= days) { dates[i].push(j) }
+            j++
+          }
         }
       }
     }
