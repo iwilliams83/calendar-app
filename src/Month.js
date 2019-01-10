@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 class Month extends Component {
   daysOfWeek = () => {
@@ -17,8 +17,8 @@ class Month extends Component {
   }
 
   rows = () => {
-    const { days } = this.props.month
-    const start = 3
+    const { days, start } = this.props.month
+
     const style = {
             height: '80px',
             'verticalAlign': 'middle',
@@ -35,7 +35,6 @@ class Month extends Component {
         dates.push([])
         if(i === 0){
           for(let s = 0; s < start; s++){
-            console.log('dates: ', dates)
             dates[i].push(0)
           }
           for(let r = start; r < 7; r++){
@@ -45,28 +44,28 @@ class Month extends Component {
         }
         else{
           for(let k = 0; k < 7; k++){
-            if(j <= days) { dates[i].push(j) }
+            j <= days ? dates[i].push(j) : dates[i].push(0)
             j++
           }
         }
       }
     }
+    
+    return <>
+            {dates.map((dateArr, idx) => {
+                return <Grid.Row columns={7} textAlign='center' key={idx}>
+                  {dateArr.map((date, idx) => {
+                    return <Grid.Column key={idx}>
+                          <div style={style}>{date}</div>
+                      </Grid.Column>
+                  })}
+                </Grid.Row>
+              })}
+          </>
 
-    console.log('dates: ', dates)
-
-    return <Grid.Row columns={7} textAlign='center'>
-            {dates.map(dateArr => {
-              return dateArr.map((date, idx) => {
-                return <Grid.Column key={idx}>
-                      <div style={style}>{date}</div>
-                  </Grid.Column>
-              })
-            })}
-          </Grid.Row>
   }
 
   render(){
-    console.log('month:', this.props.month)
     return <div className="calendar-table">
             <Grid celled>
               <Grid.Row columns={1} textAlign='center'>
