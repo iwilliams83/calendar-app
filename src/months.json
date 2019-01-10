@@ -1,0 +1,76 @@
+{
+  "months": [
+    {
+      "id": 1,
+      "name": "JANUARY",
+      "days": 31,
+      "start": "Wednesday"
+    },
+    {
+      "id": 2,
+      "name": "FEBRUARY",
+      "days": 28,
+      "start": "Friday"
+    },
+    {
+      "id": 3,
+      "name": "MARCH",
+      "days": 31,
+      "start": "Friday"
+    },
+    {
+      "id": 4,
+      "name": "APRIL",
+      "days": 30,
+      "start": "Monday"
+    },
+    {
+      "id": 5,
+      "name": "MAY",
+      "days": 31,
+      "start": "Wednesday"
+    },
+    {
+      "id": 6,
+      "name": "JUNE",
+      "days": 30,
+      "start": "Saturday"
+    },
+    {
+      "id": 7,
+      "name": "JULY",
+      "days": 31,
+      "start": "Monday"
+    },
+    {
+      "id": 8,
+      "name": "AUGUST",
+      "days": 31,
+      "start": "Thursday"
+    },
+    {
+      "id": 9,
+      "name": "SEPTEMBER",
+      "days": 30,
+      "start": "Sunday"
+    },
+    {
+      "id": 10,
+      "name": "OCTOBER",
+      "days": 31,
+      "start": "Tuesday"
+    },
+    {
+      "id": 11,
+      "name": "NOVEMBER",
+      "days": 30,
+      "start": "Friday"
+    },
+    {
+      "id": 12,
+      "name": "DECEMBER",
+      "days": 31,
+      "start": "Sunday"
+    }
+  ]
+}
