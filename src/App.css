@@ -11,6 +11,16 @@
   margin: 0;
 }
 
+.ui.button {
+  font-size: 0.8rem;
+}
+
+.month-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2.5em;
+}
+
 .App-header {
   /* background-color: #282c34; */
   min-height: 100vh;
