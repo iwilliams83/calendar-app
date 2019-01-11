@@ -18,7 +18,6 @@ class Month extends Component {
 
   rows = () => {
     const { days, start } = this.props.month
-
     const style = {
             height: '80px',
             'verticalAlign': 'middle',
@@ -26,12 +25,12 @@ class Month extends Component {
             'lineHeight': '80px'
           }
     const dates = []
-
     const weeks = Math.ceil(days/7)
     let j = 1
+    let i = 0
 
     while(j <= days){
-      for(let i = 0; i < weeks; i++){
+      while(i <= weeks) {
         dates.push([])
         if(i === 0){
           for(let s = 0; s < start; s++){
@@ -48,7 +47,12 @@ class Month extends Component {
             j++
           }
         }
-      }
+        i++
+      }//end while loop
+    }
+
+    if(dates[dates.length-1][0] === 0) {
+      dates.pop()
     }
 
     return <>
@@ -66,11 +70,12 @@ class Month extends Component {
   }
 
   render(){
+    const { name } = this.props.month
     return <div className="calendar-table">
             <Grid celled>
               <Grid.Row columns={1} textAlign='center'>
                 <Grid.Column>
-                  <h2>JANUARY</h2>
+                  <h2>{name}</h2>
                 </Grid.Column>
               </Grid.Row >
 
