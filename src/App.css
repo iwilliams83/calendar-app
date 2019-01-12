@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -9,12 +11,25 @@
 }
 
 .calendar-table {
-  border: solid black;
-  margin: 3em;
+  margin: 1em 3em 0 3em;
+  padding-bottom: 3em;
 }
 
 .ui.celled.grid {
   margin: 0;
+  background-color: #ffffff73;
+}
+
+.ui.celled.grid>.row>.column {
+  box-shadow: -1px 0 0 0 #000000;
+}
+
+.ui.celled.grid>.row {
+  box-shadow: 0 -1px 0 0 #000000;
+}
+
+.ui.celled.grid {
+  box-shadow: 0 0 0 1px #000000;
 }
 
 .ui.button {
@@ -24,7 +39,7 @@
 .month-buttons {
   display: flex;
   justify-content: space-evenly;
-  margin: 2.5em 2.5em -1em 2.5em;
+  padding: 2.5em 2.5em 1em 2.5em;
 }
 
 .App-header {

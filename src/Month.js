@@ -10,7 +10,7 @@ class Month extends Component {
     return <Grid.Row columns={7} textAlign='center'>
             {days.map((day, idx) => {
               return <Grid.Column key={idx}>
-                {day}
+                <b>{day}</b>
               </Grid.Column>
             })}
           </Grid.Row>
@@ -24,6 +24,7 @@ class Month extends Component {
             'textAlign': 'center',
             'lineHeight': '80px'
           }
+
     const dates = []
     const weeks = Math.ceil(days/7)
     let j = 1
@@ -60,7 +61,9 @@ class Month extends Component {
                 return <Grid.Row columns={7} textAlign='center' key={idx}>
                   {dateArr.map((date, idx) => {
                     return <Grid.Column key={idx}>
+                      <b>
                         {date === 0 ? <div></div> : <div style={style}>{date}</div>}
+                      </b>
                       </Grid.Column>
                   })}
                 </Grid.Row>
@@ -71,11 +74,12 @@ class Month extends Component {
 
   render(){
     const { name } = this.props.month
+    
     return <div className="calendar-table">
             <Grid celled>
               <Grid.Row columns={1} textAlign='center'>
                 <Grid.Column>
-                  <h2>{name}</h2>
+                  <h2>{name} &nbsp; 2019</h2>
                 </Grid.Column>
               </Grid.Row >
 
