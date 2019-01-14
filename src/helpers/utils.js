@@ -7,12 +7,12 @@ import mayImage from "../images/may.jpg"
 import junImage from "../images/june.jpg"
 import julImage from "../images/july.jpg"
 import augImage from "../images/august.jpg"
-// import sepImage from "../images/february.jpg"
-// import octImage from "../images/february.jpg"
-// import novImage from "../images/february.jpg"
-// import decImage from "../images/february.jpg"
+import sepImage from "../images/september.jpg"
+import octImage from "../images/october.jpg"
+import novImage from "../images/november.jpg"
+import decImage from "../images/december.jpg"
 
-const imagesMap = {
+const imageMap = {
   0: janImage,
   1: febImage,
   2: marImage,
@@ -21,12 +21,12 @@ const imagesMap = {
   5: junImage,
   6: julImage,
   7: augImage,
-  //8: sepImage,
-  //9: octImage,
-  //10: novImage,
-  //11: decImage
+  8: sepImage,
+  9: octImage,
+  10: novImage,
+  11: decImage
 }
 
 export function getImage(imageIndex) {
-  return imagesMap[imageIndex];
+  return imageMap[imageIndex];
 }
