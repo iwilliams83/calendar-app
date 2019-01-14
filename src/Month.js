@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
+import Date from './Date'
 
 class Month extends Component {
   daysOfWeek = () => {
@@ -18,9 +19,6 @@ class Month extends Component {
 
   rows = () => {
     const { days, start } = this.props.month
-    const style = {
-            height: '80px'
-          }
 
     const dates = []
     const weeks = Math.ceil(days/7)
@@ -59,7 +57,7 @@ class Month extends Component {
                   {dateArr.map((date, idx) => {
                     return <Grid.Column key={idx}>
                       <b>
-                        {date === 0 ? <div></div> : <div style={style}>{date}</div>}
+                        {date === 0 ? <div></div> : <Date date={date} />}
                       </b>
                       </Grid.Column>
                   })}
