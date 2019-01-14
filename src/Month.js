@@ -19,10 +19,7 @@ class Month extends Component {
   rows = () => {
     const { days, start } = this.props.month
     const style = {
-            height: '80px',
-            'verticalAlign': 'middle',
-            'textAlign': 'center',
-            'lineHeight': '80px'
+            height: '80px'
           }
 
     const dates = []
@@ -74,7 +71,7 @@ class Month extends Component {
 
   render(){
     const { name } = this.props.month
-    
+
     return <div className="calendar-table">
             <Grid celled>
               <Grid.Row columns={1} textAlign='center'>
