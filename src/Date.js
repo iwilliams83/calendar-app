@@ -5,6 +5,10 @@ export default class Date extends Component {
     input: []
   }
 
+  handleClick = () => {
+    
+  }
+
   render(){
     const style = {
             height: '80px'
