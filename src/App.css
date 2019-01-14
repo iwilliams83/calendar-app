@@ -38,11 +38,11 @@
 .month-buttons {
   display: flex;
   justify-content: space-evenly;
-  padding: 1em;
-  background-color: #0f0f0fb8;
+  padding: 2em 2.5em 1em 2.5em;
+  /* background-color: #0f0f0fb8; */
 }
 
-.App-header {
+/* .App-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -53,4 +53,4 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
