@@ -15,12 +15,9 @@ class App extends Component {
   }
 
   render() {
-    const colors = [
-      "olive", "green", "teal", "blue", "violet", "purple",
-      "pink", "brown", "red", "orange", "yellow", "olive"
-    ]
 
     const {monthToDisplay} = this.state
+    
     return (
       <div className="App" style={{
           backgroundImage: `url(${getImage(monthToDisplay)})`
