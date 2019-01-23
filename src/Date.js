@@ -1,37 +1,47 @@
 import React, { Component } from 'react'
+import InputField from './InputField'
 
 export default class Date extends Component {
   state = {
-    input: '',
-    newEvent: false
+    input: []
   }
 
-  handleClick = () => {
-    this.setState({ newEvent: true })
+  handleClick = (e) => {
+    e.preventDefault()
+    this.setState(prevState => {
+      return {input: [...prevState.input, '']}
+    })
   }
 
-  changeHandler = (e) => {
-    this.setState({ input: e.target.value})
-  }
-
-  renderInputField = () => {
-    return <input
-              value={this.state.input}
-              onChange={this.changeHandler}
-            />
-
+  updateInput = (string) => {
+    this.setState(prevState => {
+     let prevInput = [...prevState.input]
+     for(let i = 0; i < prevInput.length; i++){
+       if(prevInput[i] === ''){
+         prevInput[i] = string
+         break
+       }
+     }
+     return {input: [...prevInput]}
+   })
   }
 
   render(){
-    const style = {
-            height: '80px'
-          }
+    const dateBlockStyle = { height: '80px' }
+    const inputBlockStyle = { height: '50px' }
     const { date } = this.props
-    return <div style={style} onClick={this.handleClick}>
+    const { input } = this.state
+    return <div style={dateBlockStyle}>
               {date}
-            <div>
-              {this.state.newEvent && this.renderInputField()}
+            <div style={inputBlockStyle}>
+              {input.length > 0 && input.map((event, idx) => {
+                if(event.length > 0){
+                  return <div key={idx}>{event}</div>
+                }
+                return <InputField key={idx} updateInput={this.updateInput}/>
+              })}
             </div>
+            <div><a href='#' onClick={this.handleClick}>+</a></div>
           </div>
   }
 }

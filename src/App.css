@@ -33,6 +33,7 @@
 
 .ui.button {
   font-size: 0.8rem;
+  background-color: lightgray;
 }
 
 .month-buttons {

@@ -25,7 +25,7 @@ class App extends Component {
         <div className="month-buttons">
           {months.map((month, idx) => {
             return <Button
-                    key={idx} color="gray" month={idx}
+                    key={idx} month={idx}
                     onClick={(e, { month }) => this.setDisplayMonth(e, month)}>
                 {month.name}
               </Button>
