@@ -44,8 +44,8 @@ class Month extends Component {
           }
         }
         i++
-      }//end while loop
-    }
+      }//end 'i' while loop
+    }//end 'j' while loop
 
     if(dates[dates.length-1][0] === 0) {
       dates.pop()
@@ -65,7 +65,7 @@ class Month extends Component {
               })}
           </>
 
-  }
+      }//end rows() function
 
   render(){
     const { name } = this.props.month

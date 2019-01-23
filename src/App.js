@@ -16,8 +16,8 @@ class App extends Component {
 
   render() {
 
-    const {monthToDisplay} = this.state
-    
+    const { monthToDisplay } = this.state
+
     return (
       <div className="App" style={{
           backgroundImage: `url(${getImage(monthToDisplay)})`

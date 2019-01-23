@@ -2,11 +2,24 @@ import React, { Component } from 'react'
 
 export default class Date extends Component {
   state = {
-    input: []
+    input: '',
+    newEvent: false
   }
 
   handleClick = () => {
-    
+    this.setState({ newEvent: true })
+  }
+
+  changeHandler = (e) => {
+    this.setState({ input: e.target.value})
+  }
+
+  renderInputField = () => {
+    return <input
+              value={this.state.input}
+              onChange={this.changeHandler}
+            />
+
   }
 
   render(){
@@ -15,7 +28,10 @@ export default class Date extends Component {
           }
     const { date } = this.props
     return <div style={style} onClick={this.handleClick}>
-            {date}
+              {date}
+            <div>
+              {this.state.newEvent && this.renderInputField()}
+            </div>
           </div>
   }
 }
